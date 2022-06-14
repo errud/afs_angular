@@ -14,6 +14,9 @@ import { NewCommentComponent } from './components/new-comment/new-comment.compon
 import { ProductComponent } from './components/product/product.component';
 import { SupplierComponent } from './components/supplier/supplier.component';
 import { BuyerComponent } from './components/buyer/buyer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,11 @@ import { BuyerComponent } from './components/buyer/buyer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot({ name: 'cosmic' }),
+    NbLayoutModule,
+    NbEvaIconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
