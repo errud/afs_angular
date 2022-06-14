@@ -10,6 +10,10 @@ import { RegisterComponent } from './components/Access/register/register.compone
 import { HomeComponent } from './components/home/home.component';
 import { AdminMenuComponent } from './components/nav/admin-menu/admin-menu.component';
 import { ProfileComponent } from './components/User/profile/profile.component';
+import { NewCommentComponent } from './components/new-comment/new-comment.component';
+import { ProductComponent } from './components/product/product.component';
+import { SupplierComponent } from './components/supplier/supplier.component';
+import { BuyerComponent } from './components/buyer/buyer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { ProfileComponent } from './components/User/profile/profile.component';
     RegisterComponent,
     HomeComponent,
     AdminMenuComponent,
-    ProfileComponent
+    ProfileComponent,
+    NewCommentComponent,
+    ProductComponent,
+    SupplierComponent,
+    BuyerComponent
   ],
   imports: [
     BrowserModule,
