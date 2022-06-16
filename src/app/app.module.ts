@@ -15,9 +15,13 @@ import { ProductComponent } from './components/product/product.component';
 import { SupplierComponent } from './components/supplier/supplier.component';
 import { BuyerComponent } from './components/buyer/buyer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbMenuModule, NbIconModule, NbDialogModule, NbInputModule, NbListModule, NbSelectModule,  NbButtonModule, NbCardModule, NbToastrModule, NbSpinnerModule, NbDatepickerModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NavComponent } from './components/nav/nav.component';
+import { AdminPanelComponent } from './components/Admin/admin-panel/admin-panel.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './tools/token-interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -35,6 +39,8 @@ import { NavComponent } from './components/nav/nav.component';
     SupplierComponent,
     BuyerComponent,
     NavComponent,
+    AdminPanelComponent,
+    
 
   ],
   imports: [
@@ -46,8 +52,24 @@ import { NavComponent } from './components/nav/nav.component';
     NbEvaIconsModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
+    NbButtonModule,
+    NbCardModule,
+    NbIconModule,
+    NbInputModule,
+    NbListModule,
+    NbDatepickerModule.forRoot(),
+    NbDialogModule.forRoot(),
+    NbSelectModule,
+    NbSpinnerModule,
+    HttpClientModule,
+    NbToastrModule,
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

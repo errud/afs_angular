@@ -1,1 +1,32 @@
-<p>profile works!</p>
+<nb-card status="info" size="small">
+    <nb-card-header>
+        Profil de {{ connectedUser.firstName}} {{connectedUser.lastName}}
+    </nb-card-header>
+    <nb-card-body>
+        <nb-list>
+            <nb-list-item>
+        <nb-layout-column>
+            <nb-list>
+                <nb-list-item>
+                    <label>Email : </label>
+                </nb-list-item>
+                <nb-list-item>
+                    <label>Nickname : </label>
+                </nb-list-item>
+            </nb-list>
+        </nb-layout-column>
+        <nb-layout-column >
+            <nb-list>
+                <nb-list-item>
+                    <label>{{connectedUser.email}}</label>
+                </nb-list-item>
+                <nb-list-item>
+                    <label>{{connectedUser.nickName}}</label>
+                </nb-list-item>
+            </nb-list>
+        </nb-layout-column>
+    </nb-list-item>
+    </nb-list>
+    </nb-card-body>
+</nb-card>
+

@@ -1,1 +1,12 @@
-<p>login works!</p>
+<nb-card>
+    <nb-card-header>
+        Sign in to portal
+    </nb-card-header>
+    <nb-card-body>
+        <form [formGroup]="loginFG" (ngSubmit)="onSubmit()">
+            <p>E-mail : <input formControlName="email" nbInput></p>
+            <p>Password : <input formControlName="password" type="password" nbInput></p>
+            <button nbButton type="submit" [disabled]="loginFG.invalid">Connect</button>
+        </form>
+    </nb-card-body>
+</nb-card>
