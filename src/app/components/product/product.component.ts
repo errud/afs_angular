@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../../models/product.model';
+import { ProductService } from 'src/app/services/product.service';
+
 
 @Component({
   selector: 'app-product',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  listProduct : Product[]
+  activeLink : boolean = false;
+
+
+  constructor(
+    private _service : ProductService
+  ) { }
 
   ngOnInit(): void {
+    this.activeLink = localStorage.getItem('token') != '' ? true : false
+    this._service.getAll().subscribe((data : Product[]) => this.listProduct = data)
   }
 
 }

@@ -1,1 +1,14 @@
-<p>product works!</p>
+<nb-card accent="warning">
+    <nb-card-header>
+        <h3>List of Products</h3>
+    </nb-card-header>
+    <nb-card-body>
+        <nb-list>
+            <nb-list-item *ngFor="let item of listProduct">
+                <p *ngIf="activeLink == true"><a [routerLink]="['/detail/'+item.id]">{{item.title}}</a></p><hr>
+                <p *ngIf="activeLink == true"><a [routerLink]="['/detail/'+item.id]">{{item.imageUrl}}</a></p>            
+                <p *ngIf="activeLink == false">{{item.title}}</p>
+            </nb-list-item>
+        </nb-list>
+    </nb-card-body>
+</nb-card>

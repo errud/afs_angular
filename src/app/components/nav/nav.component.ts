@@ -35,7 +35,7 @@ export class NavComponent implements OnInit {
     this.items = [
       { link : '/home', title : "Home", icon : 'home'},
       { link : '/about', title : "About", icon : 'alert-triangle' },
-      { link : '/product', title : "List of products"}
+      { link : '/product', title : "List of Products"}
     ]
     
   }
