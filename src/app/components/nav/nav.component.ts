@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavComponent implements OnInit {
 
-  public items? : NbMenuItem[]
+  public items : NbMenuItem[]
   public adminMenu : NbMenuItem[]
   subAuth : Subscription
   isAdmin : boolean
@@ -26,7 +26,7 @@ export class NavComponent implements OnInit {
 
     this.subAuth = this._auth.isConnectedSubject.subscribe(() => 
     {
-      this.isAdmin = localStorage.getItem('role') == 'Admin' ? true : false
+      this.isAdmin = localStorage.getItem('role') == "Admin" ? true : false
     })
     this._auth.emitIsConnected()
 

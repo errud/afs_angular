@@ -8,6 +8,6 @@
     <!-- <span *ngIf="connected"> -->
         <span *ngIf="connectedUser != null">
         <a [routerLink]="['/profile']">{{connectedUser.firstName}} </a>
-        <a [routerLink]="['/adminPanel']" *ngIf="connectedUser.role"> | Control Panel</a>
+        <a [routerLink]="['/adminPanel']" *ngIf="connectedUser.role"> | Control Panel </a>
         <button nbButton (click)="logout()">Disconnect</button>
     </span>

@@ -13,20 +13,21 @@ export class UserService {
   private url : string = environment.baseAdres;
 
 
+
   constructor(
     private _client : HttpClient,
     private _router : Router 
   ) { }
 
   register(newUser: UserRegister){
-    this._client.post(this.url+"/user/register", newUser, {responseType:'text'}).subscribe({
+    this._client.post(this.url+"user/register", newUser, {responseType:'text'}).subscribe({
       next : () => this._router.navigate(['/product']),
       error : (error) => console.log(error) 
     });
   }
 
   getProfile(id : number) : Observable<ConnectedUser> {
-    return this._client.get<ConnectedUser>(this.url+"/user/"+id)
+    return this._client.get<ConnectedUser>(this.url+"user/"+id)
   }
 
   updateUser(u : ConnectedUser) {

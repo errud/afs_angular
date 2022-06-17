@@ -8,7 +8,7 @@ import { NbMenuItem } from '@nebular/theme';
 })
 export class AdminMenuComponent implements OnInit {
 
-  adminMenu? : NbMenuItem[]
+  adminMenu : NbMenuItem[]
   constructor() { }
 
   ngOnInit(): void {

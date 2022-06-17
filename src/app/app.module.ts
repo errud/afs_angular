@@ -1,4 +1,3 @@
-import { getInstructionStatements } from '@angular/compiler/src/render3/view/util';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,20 +26,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
-    AuthComponent,
+    NavComponent,
+    HomeComponent,
+    AboutComponent,  
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
-    AdminMenuComponent,
-    ProfileComponent,
-    NewCommentComponent,
+    AuthComponent,
+    AdminPanelComponent,
     ProductComponent,
     SupplierComponent,
     BuyerComponent,
-    NavComponent,
-    AdminPanelComponent,
-    
+    ProfileComponent,
+    AdminMenuComponent,
+    NewCommentComponent,   
 
   ],
   imports: [
@@ -59,13 +57,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbListModule,
     NbDatepickerModule.forRoot(),
     NbDialogModule.forRoot(),
-    NbSelectModule,
-    NbSpinnerModule,
-    HttpClientModule,
-    NbToastrModule,
     FormsModule,
-    ReactiveFormsModule,
-
+    NbToastrModule.forRoot(),
+    ReactiveFormsModule,  
+    HttpClientModule,
+    NbSpinnerModule,
+    NbSelectModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}

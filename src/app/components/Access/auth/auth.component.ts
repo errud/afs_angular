@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class AuthComponent implements OnInit {
 
   isConnectedSub : Subscription;
-  connectedUser? : ConnectedUser;
+  connectedUser : ConnectedUser;
   connected : boolean;
 
   get test() : string {
@@ -19,7 +19,7 @@ export class AuthComponent implements OnInit {
   } 
 
   constructor(
-    private _authService :AuthService
+    private _authService : AuthService
   ) { }
 
   ngOnInit(): void {

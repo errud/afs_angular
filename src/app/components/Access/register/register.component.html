@@ -1,1 +1,60 @@
-<p>register works!</p>
+<form [formGroup]="userRegisterFG" (ngSubmit)="onSubmit()">
+    <nb-card>
+        <nb-card-header>
+            <h5>New User</h5>
+        </nb-card-header>
+        <nb-card-body>
+            <nb-list>
+                <nb-list-item>
+                <nb-layout-column>
+                    <nb-list>
+                        <nb-list-item>
+                            Email
+                        </nb-list-item>
+                    </nb-list>
+                    <nb-list>
+                        <nb-list-item>
+                            Password
+                        </nb-list-item>
+                    </nb-list>
+                    <nb-list>
+                        <nb-list-item>
+                            Firstname
+                        </nb-list-item>
+                    </nb-list>
+                    <nb-list>
+                        <nb-list-item>
+                            Lastname
+                        </nb-list-item>
+                    </nb-list>
+                    <nb-list>
+                        <nb-list-item>
+                            Nickname
+                        </nb-list-item>
+                    </nb-list>
+                    <nb-list>
+                        <nb-list-item>
+                            FavoriteProductType
+                        </nb-list-item>
+                    </nb-list>
+                    
+                </nb-layout-column>
+                <nb-layout-column style="border-left: black 1px solid;">
+                    <p><input nbInput [status]="(userRegisterFG.controls['email'].invalid && userRegisterFG.value['email'] != '') ? 'danger' : 'basic'" formControlName="email"></p>
+                    <p><input nbInput [status]="(userRegisterFG.controls['password'].invalid && userRegisterFG.value['password'] != '') ? 'danger' : 'basic'" formControlName="password" type="password"></p>
+                    <p><input nbInput formControlName="firstName"></p>
+                    <p><input nbInput formControlName="lastName"></p>
+                    <p><input nbInput formControlName="nickName"></p>
+                    <p><input nbInput formControlName="favoritept" type="int"></p>
+                </nb-layout-column>
+                <nb-layout-column></nb-layout-column>
+                <nb-layout-column></nb-layout-column>
+            </nb-list-item>
+            </nb-list>
+        </nb-card-body>
+        <nb-card-footer>
+             <p><button nbButton [disabled]="userRegisterFG.invalid">Validate</button></p>
+        </nb-card-footer>
+    </nb-card>  
+    </form>
+    
