@@ -62,7 +62,7 @@ export class AddComponent implements OnInit {
       product.suppliers.push({prodid : SupFromFg[i]['id'], prodtype: 0,  userid : SupFromFg[i]['id'], quantity : 0, totalprice : 0})
     }
 
-      this._pService.addProduct(product)
+      //this._pService.addProduct(product)
 
   }
 
