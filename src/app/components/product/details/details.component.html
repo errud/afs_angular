@@ -1,0 +1,41 @@
+<nb-card status="primary">
+    <nb-card-header>
+        <h2>{{ currentProd.title }} <button class="right" nbButton outline status="control" (click)="addComment()">Add a comment</button></h2>
+
+    </nb-card-header>
+    <nb-card-body>
+        <p>Image : {{currentProd.imageUrl}}</p>
+        <p>Description : {{currentProd.description}}</p>
+        <p>Origin : {{currentProd.origin}}</p>
+        <p>Category :<a [routerLink]="['/pdetail/'+currentProd.category.id]">{{currentProd.category.name}}</a></p>
+        <nb-card *ngIf="currentProd.suppliers" status="success">
+            <nb-card-header (click)="castToggle()" style="cursor: pointer;"><nb-icon icon="arrow-down"></nb-icon>Shipping</nb-card-header>
+            <nb-card-body *ngIf="castToggled">
+                <div *ngFor="let item of currentProd.suppliers">
+                    <p>Quantity : {{item.quantity}}</p>
+                    <p>Price : {{item.quantity}}</p>
+                    <p>Product Sub Category : {{item.prodtype}}</p>                    
+                    <hr />
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </nb-card-body>
+    <nb-card-footer *ngIf="commentList.length > 0"><p (click)="coToggle()" style="cursor: pointer;"><nb-icon icon="arrow-down"></nb-icon>Comments</p>
+        <div *ngIf="commentToggled">
+        <nb-card *ngFor="let item of commentList">
+            <nb-card-header>
+                De : {{item.userID}} le : {{item.postDate | date: 'dd/MM/yyyy'}}
+                 <span *ngIf="isAdmin" class="right">
+                     <button 
+                    nbButton status="danger" 
+                    (click)="deleteComment(item.id)">X
+                </button>
+            </span>
+            </nb-card-header>
+            <nb-card-body>
+                {{item.content}}
+            </nb-card-body>
+        </nb-card>
+    </div>
+    </nb-card-footer>
+</nb-card>

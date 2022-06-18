@@ -1,0 +1,95 @@
+<!-- <input (change)="upfile($event)" type="file">
+<img [src]="url != '' ? url : ''"> -->
+<form [formGroup]="fg" (ngSubmit)="submitForm()">
+    <nb-card>
+        <nb-card-header>
+            <h5>New Product &nbsp; 
+                <button nbButton 
+                        outline 
+                        status="warning" 
+                        size="tiny" 
+                        (click)="newPerson()" 
+                        type="button">Add A New Product</button></h5>
+        </nb-card-header>
+        <nb-card-body>
+            <nb-list>
+                <nb-list-item>
+                    <nb-layout-column>
+                        <nb-list>
+                            <nb-list-item>
+                                Title
+                            </nb-list-item>
+                        </nb-list>
+                        <nb-list>
+                            <nb-list-item>
+                                Description
+                            </nb-list-item>
+                        </nb-list>
+                        <nb-list>
+                            <nb-list-item>
+                                BrandLogo
+                            </nb-list-item>
+                        </nb-list>
+                        <nb-list>
+                            <nb-list-item>
+                                Origin
+                            </nb-list-item>
+                        </nb-list>
+                        <nb-list>
+                            <nb-list-item>
+                                Category
+                            </nb-list-item>
+                        </nb-list>
+                    
+                    </nb-layout-column>
+                    <nb-layout-column style="border-left: black 1px solid;">
+                    
+                            <p><input nbInput formControlName="title"></p>
+                       
+                            <p><input nbInput formControlName="desc" type="text"></p>
+                       
+                            <p><input nbInput formControlName="imageurl" type="text"></p>
+
+                            <p><input nbInput formControlName="origin" type="text"></p>
+                        
+                            <p><nb-select placeholder="Faites votre choix" formControlName="category">
+                                <nb-option *ngFor="let p of categoryListe" 
+                                            [value]="p.id">
+                                            {{p.name}}</nb-option>
+                            </nb-select></p>                    
+
+                       
+                    
+                    </nb-layout-column>
+                    <nb-layout-column></nb-layout-column>
+                    <nb-layout-column></nb-layout-column>
+                </nb-list-item>
+            </nb-list>
+            <nb-card accent="info">
+            <nb-card-header>
+                Liste of suppliers&nbsp;
+                <button type="button" nbButton 
+                        shape="round" size="tiny" 
+                        status="success" (click)="addSupplier()">Add</button>
+            </nb-card-header>
+            <nb-card-body>
+                <nb-list *ngIf="getSuppliers().controls.length > 0" formArrayName="suppliers">
+                    <nb-list-item *ngFor="let a of getSuppliers().controls; let i = index" [formArrayName]="i">
+                        Quantity : <input type="text" nbInput formControlName="quantity"> 
+                        Price : <input type="text" nbInput formControlName="totalprice"> 
+                        Product Type : <input type="text" nbInput formControlName="prodid"> 
+                        &nbsp;     
+                        <nb-select placeholder="Faites votre choix" formControlName="id">
+                            <nb-option *ngFor="let p of prodtypeListe" 
+                                        [value]="p.id">{{p.name}}</nb-option>
+                        </nb-select>
+                    </nb-list-item>
+                </nb-list>
+            </nb-card-body>
+            </nb-card>
+        </nb-card-body>
+        <nb-card-footer>
+             <p><button nbButton [disabled]="fg.invalid">Validate</button></p>
+        </nb-card-footer>
+    </nb-card>  
+</form>

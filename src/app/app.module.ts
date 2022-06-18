@@ -21,6 +21,10 @@ import { AdminPanelComponent } from './components/Admin/admin-panel/admin-panel.
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './tools/token-interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DetailsComponent } from './components/product/details/details.component';
+import { AddComponent } from './components/product/add/add.component';
+import { AddpersonComponent } from './components/supplier/addperson/addperson.component';
+import { PersondetailComponent } from './components/supplier/persondetail/persondetail.component';
 
 
 @NgModule({
@@ -38,7 +42,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BuyerComponent,
     ProfileComponent,
     AdminMenuComponent,
-    NewCommentComponent,   
+    NewCommentComponent,
+    DetailsComponent,
+    AddComponent,
+    AddpersonComponent,
+    PersondetailComponent,   
 
   ],
   imports: [

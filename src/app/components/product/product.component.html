@@ -5,8 +5,8 @@
     <nb-card-body>
         <nb-list>
             <nb-list-item *ngFor="let item of listProduct">
-                <p *ngIf="activeLink == true"><a [routerLink]="['/detail/'+item.id]">{{item.title}}</a></p><hr>
-                <p *ngIf="activeLink == true"><a [routerLink]="['/detail/'+item.id]">{{item.imageUrl}}</a></p>            
+                <p *ngIf="activeLink == true"><a [routerLink]="['/detail/'+item.id]">{{item.title}}</a></p> &nbsp;&nbsp;<p>from</p>&nbsp;
+                <p *ngIf="activeLink == true"><a [routerLink]="['/detail/'+item.id]">{{item.origin}}</a></p>            
                 <p *ngIf="activeLink == false">{{item.title}}</p>
             </nb-list-item>
         </nb-list>
